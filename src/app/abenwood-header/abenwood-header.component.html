@@ -1,7 +1,8 @@
 <!--==========================
   Header
   ============================-->
-  <header id="header" class="header-fixed">
+  <button type="button" id="mobile-nav-toggle" (click)="toggleMobileNav()"><i class="fa" [ngClass]="(showMobileNav | async) ? 'fa-times':'fa-bars'"></i></button>
+  <header id="header" class="animated" data-aos="header-fixed" data-aos-anchor="#about">
     <div class="container">
 
       <div id="logo" class="pull-left">
@@ -10,9 +11,9 @@
         <h3><img src="assets/images/logo_A.jpg" width="40" alt="" title="" /><a href="#hero">benwood Property Solutions</a></h3>
       </div>
 
-      <nav id="nav-menu-container">
+      <nav [id]="(showMobileNav | async) ? 'mobile-nav':'nav-menu-container'">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="#hero">Home</a></li>
+          <li class=""><a href="#hero">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
           <li class="menu-has-children"><a href="">Drop Down</a>

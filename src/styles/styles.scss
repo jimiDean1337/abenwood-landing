@@ -6,6 +6,7 @@
 --------------------------------------------------------------*/
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap/scss/variables';
+@import '~aos/src/sass/aos.scss';
 @import '~hover.css/scss/hover';
 @import 'animate';
 $fa-font-path: "~font-awesome/fonts";
@@ -110,7 +111,8 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-#header {
+#header[data-aos='header-fixed'] {
+	line-height: 1;
   padding: 30px 0;
   height: 92px;
   position: fixed;
@@ -119,6 +121,12 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   transition: all 0.5s;
   z-index: 997;
+  &.aos-animate {
+	  background: rgba(52, 59, 64, 0.9);
+	  padding: 20px 0;
+	  height: 75px;
+	  @include transition(0.5s);
+	}
 }
 
 #header #logo {
@@ -152,13 +160,6 @@ h1, h2, h3, h4, h5, h6 {
   #header #logo img {
     max-height: 40px;
   }
-}
-
-#header.header-fixed {
-  background: rgba(52, 59, 64, 0.9);
-  padding: 20px 0;
-  height: 72px;
-  transition: all 0.5s;
 }
 
 /*--------------------------------------------------------------
