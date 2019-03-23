@@ -2,21 +2,20 @@
   Header
   ============================-->
   <button type="button" id="mobile-nav-toggle" (click)="toggleMobileNav()"><i class="fa" [ngClass]="(showMobileNav | async) ? 'fa-times':'fa-bars'"></i></button>
-  <header id="header" class="animated" data-aos="header-fixed" data-aos-anchor="#about">
+  <header id="header" class="animated fadeInDown" data-aos="header-fixed" data-aos-anchor="#about">
     <div class="container">
 
       <div id="logo" class="pull-left">
 
-        <!-- Uncomment below if you prefer to use a text logo -->
-        <h3><img src="assets/images/logo_A.jpg" width="40" alt="" title="" /><a href="#hero">benwood Property Solutions</a></h3>
+        <h3><img src="assets/images/logo_A.jpg" width="30" alt="abenwood logo" title="abenwood logo" /><a href="#hero">benwood Property Solutions</a></h3>
       </div>
 
-      <nav [id]="(showMobileNav | async) ? 'mobile-nav':'nav-menu-container'">
+      <nav #navMenu id="nav-menu-container">
         <ul class="nav-menu">
           <li class=""><a href="#hero">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
-          <li class="menu-has-children"><a href="">Drop Down</a>
+          <!-- <li class="menu-has-children"><a href="">Drop Down</a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li class="menu-has-children"><a href="#">Drop Down 2</a>
@@ -32,9 +31,10 @@
               <li><a href="#">Drop Down 4</a></li>
               <li><a href="#">Drop Down 5</a></li>
             </ul>
-          </li>
+          </li> -->
           <li><a href="#contact">Contact Us</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
   </header><!-- #header -->
+  <div id="mobile-body-overlay" [hidden]="!(showMobileNav | async)"></div>
