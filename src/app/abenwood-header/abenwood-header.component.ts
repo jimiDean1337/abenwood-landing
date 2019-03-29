@@ -20,7 +20,7 @@ export class AbenwoodHeaderComponent implements OnInit {
     const showing = this.showMobileNav.getValue();
     this.showMobileNav.next(!showing);
     const body = document.body;
-    const nav = body.querySelector('#nav-menu-container');
+    const nav = this.navMenu.nativeElement;
     const mobile = nav.cloneNode(true);
 
     mobile.firstChild.parentElement.setAttribute('id', 'mobile-nav');
@@ -29,12 +29,12 @@ export class AbenwoodHeaderComponent implements OnInit {
     const li = body.querySelectorAll('#mobile-nav > ul > li');
     const clicked = fromEvent(mobileMenu.childNodes, 'click');
     body.classList.toggle('mobile-nav-active');
-    console.log('mobile nav', nav, mobile, mobileMenu);
+    // console.log('mobile nav', nav, mobile, mobileMenu);
     if (this.showMobileNav.getValue()) {
       body.append(mobile);
       clicked.subscribe(clicker => {
         this.toggleMobileNav();
-      })
+      });
     } else {
       mobile.firstChild.parentElement.remove();
     }

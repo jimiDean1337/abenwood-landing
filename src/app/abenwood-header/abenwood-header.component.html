@@ -4,16 +4,16 @@
   <button type="button" id="mobile-nav-toggle" (click)="toggleMobileNav()"><i class="fa" [ngClass]="(showMobileNav | async) ? 'fa-times':'fa-bars'"></i></button>
   <header id="header" class="animated fadeInDown" data-aos="header-fixed" data-aos-anchor="#about">
     <div class="container">
-
       <div id="logo" class="pull-left">
-
-        <h3><img src="assets/images/logo_A.jpg" width="30" alt="abenwood logo" title="abenwood logo" /><a href="#hero">benwood Property Solutions</a></h3>
+        <h3>
+          <!-- <img src="assets/images/logo_A.jpg" width="30" alt="abenwood logo" title="abenwood logo" /> -->
+          <a href="#hero"><span>A</span>benwood<span>Property</span>Solutions</a></h3>
       </div>
-
       <nav #navMenu id="nav-menu-container">
         <ul class="nav-menu">
           <li class=""><a href="#hero">Home</a></li>
           <li><a href="#about">About Us</a></li>
+          <li><a href="#facts">Facts</a></li>
           <li><a href="#services">Services</a></li>
           <!-- <li class="menu-has-children"><a href="">Drop Down</a>
             <ul>

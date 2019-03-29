@@ -2,20 +2,20 @@
       Contact Section
     ============================-->
     <section id="contact">
-      <div class="container wow fadeInUp">
+      <div class="container animated" data-aos="fade-left">
         <div class="section-header">
           <h3 class="section-title">Contact</h3>
           <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
         </div>
       </div>
 
-      <!-- Uncomment below if you wan to use dynamic maps -->
+      <!-- Google Map embedded -->
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24362.03025569664!2d-82.88406907750151!3d40.247890936341854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8838582cda8f0ca3%3A0xf6506713413f9dfb!2sSunbury%2C+OH+43074%2C+USA!5e0!3m2!1sen!2sbg!4v1552995178411" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
 
       <div class="container animated mt-5" data-aos="fade-up">
         <div class="row justify-content-center">
 
-          <div class="col-lg-3 col-md-4 mr-lg-4">
+          <div class="col-lg-3 col-md-4 mr-4">
 
             <div class="info">
               <div>
@@ -48,25 +48,25 @@
             <div class="form">
               <div id="sendmessage">Your message has been sent. Thank you!</div>
               <div id="errormessage"></div>
-              <form action="" method="post" role="form" class="contactForm">
+              <form role="form" class="contactForm">
                 <div class="form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <input type="text" name="name" ngModel class="form-control" id="name" placeholder="Your Name" required />
                   <div class="validation"></div>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <input type="email" ngModel class="form-control" name="email" id="email" placeholder="Your Email" required />
                   <div class="validation"></div>
                 </div>
                 <div class="form-group">
-                  <input type="phone" class="form-control" name="phone" id="phone" placeholder="Your Phone Number" data-rule="phone" data-msg="Please enter a valid phone number" />
+                  <input type="phone" ngModel class="form-control" name="phone" id="phone" placeholder="Your Phone Number" required pattern="/^(?:\+|00|011)[0-9 ().-]+$/" />
                   <div class="validation"></div>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <input type="text" ngModel class="form-control" name="subject" id="subject" placeholder="Subject" />
                   <div class="validation"></div>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                  <textarea ngModel class="form-control" name="text" rows="5" placeholder="Message"></textarea>
                   <div class="validation"></div>
                 </div>
                 <div class="text-center"><button type="submit">Send Message</button></div>
